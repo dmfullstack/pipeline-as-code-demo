@@ -1,7 +1,7 @@
 #!groovy
 
 stage 'Dev'
-node ('Master') {
+node ('docker') {
     checkout scm
     mvn 'clean package'
     dir('target') {stash name: 'war', includes: 'x.war'}
